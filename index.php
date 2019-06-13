@@ -34,28 +34,10 @@
     <script>
         $('#login').submit(function(e) {
             e.preventDefault();
-            var v = $("#login").serialize();
-            console.log(v);
-            // $.post('https://bulkland.in/account/verifylogin', $("#login").serialize()).done(function(data) {
-            //     if (data != "success") {
-            //         $("#error").html(data);
-            //     } else {
-            //         if ($("#referer").val()) {
-            //             window.location.href = $("#referer").val();
-            //         } else {
-            //             window.location.href = "https://bulkland.in/dashboard";
-            //         }
-            //     }
-            // });
+            $.post('./insetToDb.php', $("#login").serialize()).done(function(data) {
+                window.location.href = "./personalDetails.php";
+            });
         });
-
-        //  document.getElementById('value').innerHTML = pvalue;
-
-        // localStorage.setItem("textvalues", arr);
-
-
-        // return false;
-        //   }
     </script>
 
 
